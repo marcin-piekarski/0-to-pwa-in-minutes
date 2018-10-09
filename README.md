@@ -10,9 +10,9 @@ Quick introduction/refresher to converting an existing site/template to a Progre
 
 ## Starter Template:
 
-The template that I picked to convert to a Progressive Web App is called Goggle Ecommerce and it's created by w3layouts.
+The template that I picked to convert to a Progressive Web App is called Goggles Ecommerce and it's created by w3layouts.
 
-Based on Bootstrap, it features many commons features found amoung other ecommerce sites/templates.
+It's based on Bootstrap and it features many common features found among other ecommerce sites/templates.
 
 **Details:**
 
