@@ -53,7 +53,7 @@ Workbox is a set of libraries and node modules that make it easy to cache assets
 While not absolutely necessary, it does come with some useful libraries that contain pre-canned caching strategories, expiration, Google Analytics, etc.
 
 
-***Word of Warning in Regards to Workbox:***
+***Word of Warning on Workbox/Firefox:***
 
 Even though Workbox is pretty awesome. I/we have run into issues in the past with both Firefox and Edge where both browsers have completely locked up, requiring a hard refresh, due to both browsers not playing nice with Workbox.
 
@@ -64,9 +64,15 @@ Instead of Firefox just ignoring a bad service worker request. It would lock up 
 Interestingly, the way that Firefox locks up and throws a `Corrupted Content Error` has been around since at least 2014 (https://support.mozilla.org/en-US/questions/1011249);
 
 
-### Notes:
+### Tips, Notes, Warnings, etc:
 
-...
+- Always keep in mind that not all browsers are the same. Make sure that you check Firefox, Safari and Edge when building your PWA. (See my word of warning about Workbox/Firefox above)
+- Include a flag(s) which you can control, that can disable your service worker in production, and when you disable your service worker. Make sure you clean up caches, etc.
+- Be careful using ES6+ features and make sure that you build your code for the browsers that you support. (https://caniuse.com)
+- If your running server cache strategies in production (eg. Varnish). Make sure that your service worker isn't cached so that when you push an update, it's immediately picked up without having to cache bust.
+- If the URL to your service worker changes, then your service worker will re-install/re-activate. For example, if you use a hash in the service worker URL and that changes. Your service worker will re-install/re-activate.
+- CORS can become a bit annoying.  You might have to speak to your nice to your devops person about getting `www.yourdomain.com` and `cdn1.yourdomin.com` to play nice.
+- Be careful with your caching strategies. You don't want to pick the wrong strategy and end up with a number of users that have bad code for a long period of time. If your using Workbox, then it's easy to add the expiration plugin which allows you to set a finite period of time for a resource that's cached.
 
 
 ### Resources:
