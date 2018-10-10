@@ -36,7 +36,7 @@ Resources:
 - https://www.pwabuilder.com
 - https://serviceworke.rs/
 
-4. **(Optional) Add/Change Vanilla Service Worker to use Workbox **
+4. **(Optional) Add/Change Vanilla Service Worker to use Workbox**
 
 Resources:
 - https://developers.google.com/web/tools/workbox/
