@@ -187,6 +187,10 @@ self.addEventListener('fetch', function (event) {
                     // And if that fails, try the network
                     return fetchImageOrNetwork(event)
 
+                    // Check file type of request using reg ex.
+                } else if (/.*(json)$/.test(event.request.url)) {
+                    return fromNetwork(event, 400);
+
                     // For everything else, try the network
                 } else {
                     return fromNetwork(event, 400);
