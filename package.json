@@ -7,10 +7,12 @@
   ],
   "author": "Marcin Piekarski",
   "scripts": {
-    "build": "rm -rf ./dist/ && cp -r ./public/ ./dist/",
-    "parcel": "parcel build ./src/index.html",
-    "parcel:build": "parcel build ./src/index.html",
-    "serve": "./node_modules/.bin/http-server ./dist/"
+    "clean": "rm -rf ./dist/",
+    "copy": "cp -r ./src/ ./dist/",
+    "parcel:build:dev": "parcel build ./src/index.html",
+    "parcel:build:prod": "parcel build ./src/index.html",
+    "serve": "./node_modules/.bin/http-server ./dist/",
+    "serve:ssl": "./node_modules/.bin/http-server ./dist --ssl --key ./cert/server.key --cert ./cert/server.crt -a localhost -p 8080 -o"
   },
   "repository": {
     "type": "git",

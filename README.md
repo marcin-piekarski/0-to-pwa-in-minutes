@@ -6,9 +6,11 @@
 
 A lightning journey on the fundamentals required to convert an existing site into a Progressive Web App.
 
+
 ## The Plan:
 
-The plans to take an existing ecommerce template (Goggles Ecommerce by w3layouts.com) and to convert it into a Progressive Web App.
+The plan's to take an existing ecommerce template (Goggles Ecommerce by w3layouts.com) and to convert it into a Progressive Web App.
+
 
 ## The Prerequisites:
 
@@ -16,15 +18,28 @@ You'll want to enable SSL when building a Progressive Web App.
 
 If you have a Mac, have a look at https://medium.freecodecamp.org/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec to get an idea of how to get SSL working locally.
 
-After going through the tutorial. If run `npm install` and you want to use the `http-server` module to host locally. You should be able to use something like the command below to run in SSL mode:
+After going through the tutorial. If run `npm install` and you want to use the `http-server` node module to host locally.
+
+You should be able to use something like the command below to run in SSL mode:
 
 `./node_modules/.bin/http-server ./dist --ssl --key ./cert/server.key --cert ./cert/server.crt -a localhost -p 8080 -o`
+
+Note though that you might still get a warning the the Chrome Dev Tools Progressive Web App audit that states "Does not redirect HTTP traffic to HTTPS" with `http-server` setup to run using SSL.
+
+That's why, if possible, it's a good idea to deploy to something like Firebase hosting (https://firebase.google.com/docs/hosting/) every now and then to run a proper audit to keep track of your changes.
+
+Resources:
+- https://github.com/indexzero/http-server
+- https://medium.freecodecamp.org/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec
+- https://firebase.google.com/docs/hosting/
+
 
 ## The Steps:
 
 **(1) Run a Chrome Developer Tools Lighthouse Audit**
 
 Run an initial Chrome Dev Tools audit to get an idea of what we need to do to make Google Ecommerce a PWA, and then **re-run an audit after each step to make sure everything's working fine**.
+
 
 **(2) Add a Manifest and Re-Run the Lighthouse Audit**
 
@@ -34,14 +49,16 @@ Resources:
 - https://www.favicon-generator.org/
 - https://www.pwabuilder.com
 
-**(3) Add a Vanilla Service Worker and Re-Run the Lighthouse Audit**
+
+**(3a) Add a Vanilla Service Worker and Re-Run the Lighthouse Audit**
 
 Resources:
 - https://developers.google.com/web/fundamentals/primers/service-workers/
 - https://serviceworke.rs/
 - https://www.pwabuilder.com
 
-**(4) Add Workbox**
+
+**(3b) Add/Change Service Worker to Workbox**
 
 Workbox is a set of libraries and node modules that make it easy to cache assets, and take full advantage of features used to build Progressive Web Apps.
 
@@ -49,6 +66,7 @@ While not absolutely necessary, it does come with some useful libraries that con
 
 Resources:
 - https://developers.google.com/web/tools/workbox/
+
 
 **Word of Warning in Regards to Workbox:**
 
@@ -62,9 +80,11 @@ So instead of Firefox just ignoring a bad service worker request. It'd lock up t
 
 Interestingly, the way that Firefox locks up and throws a `Corrupted Content Error` has been around since at least 2014 (https://support.mozilla.org/en-US/questions/1011249);
 
+
 ### The Tips, Warnings and Resources:
 
 ...
+
 
 ## The Template:
 
