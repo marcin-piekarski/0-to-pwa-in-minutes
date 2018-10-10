@@ -19,9 +19,10 @@ if (workbox) {
     workbox.skipWaiting();
     workbox.clientsClaim();
 
-    /**
+
+    /*****************
      * Pre-Cache Files
-     */
+     *****************/
 
     workbox.precaching.precacheAndRoute([
         '/',
@@ -46,49 +47,32 @@ if (workbox) {
         '/js/bootstrap.js'
     ]);
 
-    /**
-     * Cache CSS using State While Re-validate
-     */
+
+    /*******************************
+     * Cache CSS using Network First
+     *******************************/
 
     workbox.routing.registerRoute(
         /.*\.css/,
 
-        workbox.strategies.staleWhileRevalidate({
-
-            // Don't keep any entries for more than 3 days.
-            maxAgeSeconds: 3 * 24 * 60 * 60,
-
-            // Automatically cleanup if quota is exceeded.
-            purgeOnQuotaError: true,
-
-            // Note: Status code '0' is used for opaque responses
-            statuses: [0, 200]
-        })
+        workbox.strategies.networkFirst()
     );
 
-    /**
-     * Cache JS using State While Re-validate
-     */
+
+    /******************************
+     * Cache JS using Network First
+     ******************************/
 
     workbox.routing.registerRoute(
         /.*\.js/,
 
-        workbox.strategies.staleWhileRevalidate({
-
-            // Don't keep any entries for more than 3 days.
-            maxAgeSeconds: 3 * 24 * 60 * 60,
-
-            // Automatically cleanup if quota is exceeded.
-            purgeOnQuotaError: true,
-
-            // Note: Status code '0' is used for opaque responses
-            statuses: [0, 200]
-        })
+        workbox.strategies.networkFirst()
     );
 
-    /**
+
+    /********************************
      * Cache Images using Cache First
-     */
+     ********************************/
 
     workbox.routing.registerRoute(
         /.*\.(?:png|jpg|jpeg|svg|gif)/,
@@ -115,14 +99,15 @@ if (workbox) {
         })
     );
 
-    /**
+
+    /*********************************
      * Custom Matcher/Handler for HTML
      *
      * @param url
      * @param event
      * @param params
      * @returns {boolean}
-     */
+     ********************************/
 
     var matcher = function({url, event, params}) {
         var isNavigating = event.request.mode === "navigate";
