@@ -51,6 +51,10 @@
     <!--<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">-->
     <!--<meta name="theme-color" content="#ffffff">-->
 
+    <!-- -------------------------------- -->
+    <!-- /Add a Web App Manifest and Icons -->
+    <!-- -------------------------------- -->
+
 
 
     <!--<link href="css/common-head.css" rel='stylesheet' type='text/css'/>-->
@@ -1893,14 +1897,13 @@
 </script>
 <script>
     $(document).ready(function () {
-        /*
-                                var defaults = {
-                                      containerID: 'toTop', // fading element id
-                                    containerHoverID: 'toTopHover', // fading element hover id
-                                    scrollSpeed: 1200,
-                                    easingType: 'linear'
-                                 };
-                                */
+
+        // var defaults = {
+        //       containerID: 'toTop', // fading element id
+        //     containerHoverID: 'toTopHover', // fading element hover id
+        //     scrollSpeed: 1200,
+        //     easingType: 'linear'
+        //  };
 
         $().UItoTop({
             easingType: 'easeOutQuart'
@@ -1920,25 +1923,28 @@
 <!-- -------------------- -->
 
 <script>
-    window.addEventListener('load', function () {
-        if ('serviceWorker' in navigator) {
-
-            var isWorkboxEnabled = false;
-            var serviceWorker = (isWorkboxEnabled) ? 'service-worker-workbox.js' : 'service-worker-vanilla.js';
-
-            // Register the ServiceWorker
-            navigator.serviceWorker.register(serviceWorker, {
-                scope: './'
-            }).then(function(reg) {
-                console.log('Service worker has been registered for scope:', reg.scope);
-            }).catch(function (error) {
-                // registration failed
-                console.log('Service worker registration failed with: ', error);
-            });
-        }
-    });
+    // window.addEventListener('load', function () {
+    //     if ('serviceWorker' in navigator) {
+    //
+    //         var isWorkboxEnabled = false;
+    //         var serviceWorker = (isWorkboxEnabled) ? 'service-worker-workbox.js' : 'service-worker-vanilla.js';
+    //
+    //         // Register the ServiceWorker
+    //         navigator.serviceWorker.register(serviceWorker, {
+    //             scope: './'
+    //         }).then(function(reg) {
+    //             console.log('Service worker has been registered for scope:', reg.scope);
+    //         }).catch(function (error) {
+    //             // registration failed
+    //             console.log('Service worker registration failed with: ', error);
+    //         });
+    //     }
+    // });
 </script>
 
+<!-- -------------------- -->
+<!-- /Add a Service Worker -->
+<!-- -------------------- -->
 
 
 </body>
