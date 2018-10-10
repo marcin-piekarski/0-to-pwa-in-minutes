@@ -143,7 +143,7 @@ self.addEventListener('activate', function (event) {
 });
 
 self.addEventListener('fetch', function (event) {
-    console.log('Service worker fetch', event.request.url);
+    // console.log('Service worker fetch', event.request.url);
 
     // Helpers for various request types
     let acceptHeader = event.request.headers.get('accept');
@@ -166,11 +166,11 @@ self.addEventListener('fetch', function (event) {
                 if (!isLocal) {
                     return fetch(event.request);
 
-                    // Check whether the request was found in the cache
+                // Check whether the request was found in the cache
                 } else if (response) {
                     return response;
 
-                    // Check for local HTML such as the homepage
+                // Check for local HTML such as the homepage
                 } else if (isLocal && isHtml) {
 
                     // Try getting the HTML from network first
@@ -180,18 +180,14 @@ self.addEventListener('fetch', function (event) {
                             return fromCache(event);
                         })
 
-                    // Check whether the request is an image
+                // Check whether the request is an image
                 } else if (acceptHeader && isImage) {
 
                     // Try getting the image
                     // And if that fails, try the network
                     return fetchImageOrNetwork(event)
 
-                    // Check file type of request using reg ex.
-                } else if (/.*(json)$/.test(event.request.url)) {
-                    return fromNetwork(event, 400);
-
-                    // For everything else, try the network
+                // For everything else, try the network
                 } else {
                     return fromNetwork(event, 400);
                 }
