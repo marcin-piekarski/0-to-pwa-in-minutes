@@ -1,5 +1,6 @@
 # General
 .firebaserc
+cert
 dist
 
 # Logs

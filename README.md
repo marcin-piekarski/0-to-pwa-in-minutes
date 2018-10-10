@@ -12,9 +12,13 @@ The plans to take an existing ecommerce template (Goggles Ecommerce by w3layouts
 
 ## The Prerequisites:
 
-You will need HTTPS as a prerequisite when building a Progressive Web App.
+You'll want to enable SSL when building a Progressive Web App.
 
-I have added `http-server` as a depedency to this project and if you do an `npm install` you should be able to follow the steps found here Look here: https://stackoverflow.com/questions/35127383/npm-http-server-with-ssl on how to get a local certificate working.
+If you have a Mac, have a look at https://medium.freecodecamp.org/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec to get an idea of how to get SSL working locally.
+
+After going through the tutorial. If run `npm install` and you want to use the `http-server` module to host locally. You should be able to use something like the command below to run in SSL mode:
+
+`./node_modules/.bin/http-server ./dist --ssl --key ./cert/server.key --cert ./cert/server.crt -a localhost -p 8080 -o`
 
 ## The Steps:
 
