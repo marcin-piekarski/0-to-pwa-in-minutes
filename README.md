@@ -20,7 +20,7 @@ I have added `http-server` as a depedency to this project and if you do an `npm 
 
 1. **Run a Chrome Developer Tools Lighthouse Audit**
 
-Run an initial Chrome Dev Tools audit to get an idea of what we need to do to make Google Ecommerce a PWA, and then re-run an audit after each step to make sure everything's working fine.
+Run an initial Chrome Dev Tools audit to get an idea of what we need to do to make Google Ecommerce a PWA, and then **re-run an audit after each step to make sure everything's working fine**.
 
 2a. **Add a Manifest and Re-Run the Lighthouse Audit**
 
