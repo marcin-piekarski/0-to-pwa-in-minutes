@@ -1920,24 +1920,23 @@
 <!-- -------------------- -->
 
 <script>
-    // window.addEventListener('load', function () {
-    //     if ('serviceWorker' in navigator) {
-    //         if (navigator.serviceWorker.controller) {
-    //             console.log('Service worker has been found, no need to register')
-    //         } else {
-    //
-    //             // Register the ServiceWorker
-    //             navigator.serviceWorker.register('service-worker-vanilla.js', {
-    //                 scope: './'
-    //             }).then(function(reg) {
-    //                 console.log('Service worker has been registered for scope:', reg.scope);
-    //             }).catch(function (error) {
-    //                 // registration failed
-    //                 console.log('ServiceWorker registration failed with: ', error);
-    //             });
-    //         }
-    //     }
-    // });
+    window.addEventListener('load', function () {
+        if ('serviceWorker' in navigator) {
+
+            var isWorkboxEnabled = true;
+            var serviceWorker = (isWorkboxEnabled) ? 'service-worker-workbox.js' : 'service-worker-vanilla.js';
+
+            // Register the ServiceWorker
+            navigator.serviceWorker.register(serviceWorker, {
+                scope: './'
+            }).then(function(reg) {
+                console.log('Service worker has been registered for scope:', reg.scope);
+            }).catch(function (error) {
+                // registration failed
+                console.log('Service worker registration failed with: ', error);
+            });
+        }
+    });
 </script>
 
 
