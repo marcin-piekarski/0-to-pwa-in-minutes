@@ -24,56 +24,45 @@
         }
     </script>
 
-    <script>
-        if (navigator.serviceWorker.controller) {
-            console.log('[PWA Builder] active service worker found, no need to register')
-        } else {
 
-            //Register the ServiceWorker
-            navigator.serviceWorker.register('service-worker.js', {
-                scope: './'
-            }).then(function(reg) {
-                console.log('Service worker has been registered for scope:'+ reg.scope);
-            });
-        }
-    </script>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
+    <!-- -------------------------------- -->
+    <!-- Add a Web App Manifest and Icons -->
+    <!-- -------------------------------- -->
 
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <!--<link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">-->
+    <!--<link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">-->
+    <!--<link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">-->
+    <!--<link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">-->
+    <!--<link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">-->
+    <!--<link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">-->
+    <!--<link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">-->
+    <!--<link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">-->
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">-->
 
-    <!-- manifest.json vs manifest.webmanifest -->
-    <!-- Using *.webmanifest gets around Parcel.js transforming manifest.json into manifest.js -->
-    <!-- *.webmanifest seems to be valid according to https://developer.mozilla.org/en-US/docs/Web/Manifest -->
-    <!-- BUT it looks like you might have do a bit more configuration as Firebase hosting doesn't recognise .webmanifest -->
-    <link rel="manifest" href="manifest.json">
-    <!--<link rel="manifest" href="manifest.webmanifest">-->
+    <!--<link rel="icon" type="image/png" sizes="192x192"  href="images/icons/android-icon-192x192.png">-->
+    <!--<link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">-->
+    <!--<link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">-->
+    <!--<link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">-->
 
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <!--<link rel="manifest" href="manifest.json">-->
 
-    <link href="css/common-head.css" rel='stylesheet' type='text/css'/>
+    <!--<meta name="msapplication-TileColor" content="#ffffff">-->
+    <!--<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">-->
+    <!--<meta name="theme-color" content="#ffffff">-->
 
-    <!--<link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>-->
-    <!--<link href="css/login_overlay.css" rel='stylesheet' type='text/css'/>-->
-    <!--<link href="css/style6.css" rel='stylesheet' type='text/css'/>-->
-    <!--<link href="css/shop.css" rel="stylesheet" type="text/css"/>-->
-    <!--<link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">-->
-    <!--<link href="css/owl.theme.css" rel="stylesheet" type="text/css" media="all">-->
-    <!--<link href="css/style.css" rel='stylesheet' type='text/css'/>-->
-    <!--<link href="css/fontawesome-all.css" rel="stylesheet">-->
+
+
+    <!--<link href="css/common-head.css" rel='stylesheet' type='text/css'/>-->
+
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link href="css/login_overlay.css" rel='stylesheet' type='text/css'/>
+    <link href="css/style6.css" rel='stylesheet' type='text/css'/>
+    <link href="css/shop.css" rel="stylesheet" type="text/css"/>
+    <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/owl.theme.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <link href="css/fontawesome-all.css" rel="stylesheet">
 
     <link href="//fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
@@ -1923,6 +1912,36 @@
 
 <script src="js/bootstrap.js"></script>
 <!-- js file -->
+
+
+
+<!-- -------------------- -->
+<!-- Add a Service Worker -->
+<!-- -------------------- -->
+
+<script>
+    // window.addEventListener('load', function () {
+    //     if ('serviceWorker' in navigator) {
+    //         if (navigator.serviceWorker.controller) {
+    //             console.log('Service worker has been found, no need to register')
+    //         } else {
+    //
+    //             // Register the ServiceWorker
+    //             navigator.serviceWorker.register('service-worker-vanilla.js', {
+    //                 scope: './'
+    //             }).then(function(reg) {
+    //                 console.log('Service worker has been registered for scope:', reg.scope);
+    //             }).catch(function (error) {
+    //                 // registration failed
+    //                 console.log('ServiceWorker registration failed with: ', error);
+    //             });
+    //         }
+    //     }
+    // });
+</script>
+
+
+
 </body>
 
 </html>
