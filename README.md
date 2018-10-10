@@ -77,6 +77,8 @@ Interestingly, the way that Firefox locks up and throws a `Corrupted Content Err
 - https://developers.google.com/web/fundamentals/primers/service-workers/
 - https://developers.google.com/web/tools/workbox/
 - https://serviceworke.rs/
+- https://medium.com/dev-channel/learn-how-to-build-a-pwa-in-under-5-minutes-c860ad406ed
+- https://vaadin.com/pwa/build (ES6+)
 - https://www.pwabuilder.com
 - https://www.favicon-generator.org/
 - https://firebase.google.com/docs/hosting/
