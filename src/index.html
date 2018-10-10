@@ -1923,7 +1923,7 @@
     window.addEventListener('load', function () {
         if ('serviceWorker' in navigator) {
 
-            var isWorkboxEnabled = true;
+            var isWorkboxEnabled = false;
             var serviceWorker = (isWorkboxEnabled) ? 'service-worker-workbox.js' : 'service-worker-vanilla.js';
 
             // Register the ServiceWorker
